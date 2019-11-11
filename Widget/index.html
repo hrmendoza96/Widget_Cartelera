@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/d8d88ef035.js" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/main.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
     <title>Cartelera Cines</title>
 </head>
 
@@ -25,25 +26,22 @@
             </div>
         </div>
         <div id="carrusel">
-            <div id="arrow-left" class="arrow">
-                <i class="fas fa-chevron-circle-left"></i>
-                <!-- <img src="https://cinemarkmedia.modyocdn.com/ca/300x400/217797.jpg?version=1572022800000" alt=""> -->
+            <div class="arrow">
+                <i id="arrow-left" class="fas fa-chevron-circle-left"></i>
             </div>
             <div class="slider">
                 <div class="slide">
-                    <img src="https://cinemarkmedia.modyocdn.com/ca/300x400/213041.jpg?version=1572022800000" alt="" id="img">
+                    <img onclick="window.open('https://www.cinemarkca.com')" src="" alt="" id="img">
                 </div>
             </div>
-            <div id="arrow-right" class="arrow">
-                <i class="fas fa-chevron-circle-right"></i>
-                <!-- <img src="https://cinemarkmedia.modyocdn.com/ca/300x400/212783.jpg?version=1572022800000" alt=""> -->
+            <div class="arrow">
+                <i id="arrow-right" class="fas fa-chevron-circle-right"></i>
             </div>
         </div>
         <div>
             <button class="button" onclick="window.open('https://www.cinemarkca.com')">COMPRAR ENTRADAS</button>
         </div>
     </div>
-
 
 </body>
 
