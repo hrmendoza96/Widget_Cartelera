@@ -25,23 +25,28 @@ async function connect() {
     try {
         await client.connect();
         const db = client.db("peliculasdb");
-        console.log('Conectado a: ' + db.databaseName);
+
+        /* Peliculas */
         const peliculas = db.collection("peliculas");
         const searchCursor = await peliculas.find();
         const result = await searchCursor.toArray();
-        //console.table(result);
         var data = "";
-        //result.forEach(r => console.log(r.url));
         result.forEach(r => data += r.url + ",");
-        //console.log('data:\n' + data);
-        // while (await searchCursor.hasNext()) {
-        //     console.log(await searchCursor.next());
-        // }
+
+        /* Patrocinador */
+        const patrocinador = db.collection("patrocinador");
+        const searchCursorPatrocinador = await patrocinador.findOne();
+        var nombrePatrocinador = searchCursorPatrocinador.nombre;
+        var logoPatrocinador = searchCursorPatrocinador.logo;
+        var colorPatrocinador = searchCursorPatrocinador.color;
+        var urlPatrocinador = searchCursorPatrocinador.url;
+
 
         io.sockets.on('connection', (socket) => {
             connections.push(socket);
             console.log('Connected: %s sockets connected', connections.length);
-            io.sockets.emit('new message', { msg: data });
+            io.sockets.emit('list peliculas', { msg: data });
+            io.sockets.emit('patrocinador', { nombre: nombrePatrocinador, logo: logoPatrocinador, color: colorPatrocinador, url: urlPatrocinador });
 
         });
 

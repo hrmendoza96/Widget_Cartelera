@@ -4,12 +4,18 @@ body {
     margin: 0;
 }
 
+#logo {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .container {
     width: 300px;
-    height: 250px;
+    height: 400px;
     background: #F9FAFC;
     margin: 100px auto;
     /*centrar cuadro*/
+    border-radius: 5px;
     position: relative;
 }
 
@@ -18,11 +24,11 @@ body {
     margin: 0;
     font-family: Roboto Condensed, sans-serif;
     font-style: italic;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transform: translateY(10px) translateX(100px);
+    transform: translateY(10px) translateX(40px);
     float: left;
 }
 
@@ -34,7 +40,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: Roboto Condensed, sans-serif;
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 0px;
     text-transform: uppercase;
     transform: translateY(7px) translateX(7px);
@@ -43,8 +49,8 @@ body {
 .wrap img {
     padding: 0;
     margin: 0;
-    width: 124px;
-    height: 12px;
+    width: 180px;
+    height: 18px;
     transform: translateY(7px) translateX(7px);
     float: right;
 }
@@ -63,11 +69,11 @@ body {
 }
 
 .slide img {
-    width: 140px;
-    height: 187px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transform: translateY(17px) translateX(-15px);
-    border-radius: 10px;
+    width: 205px;
+    height: 274px;
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 5px rgba(0, 0, 0, 0.19);
+    transform: translateY(35px) translateX(-182px);
+    border-radius: 5px;
     margin: auto;
 }
 
@@ -77,15 +83,15 @@ body {
     color: white;
     /* padding: 8px 35px; */
     text-align: center;
-    width: 158px;
-    height: 25px;
+    width: 250px;
+    height: 40px;
     text-decoration: none;
-    font-size: 8px;
+    font-size: 12px;
     font-family: Roboto Condensed, sans-serif;
     font-weight: bold;
     /* margin: 3px 1px; */
     cursor: pointer;
-    transform: translateY(32px) translateX(47%);
+    transform: translateY(70px) translateX(10%);
     border-radius: 5px;
     margin: auto;
 }
@@ -99,14 +105,18 @@ body {
     font-size: 26px;
 }
 
-.fas:hover {
+#arrow-left:hover {
+    color: #B5121C;
+}
+
+#arrow-right:hover {
     color: #B5121C;
 }
 
 #arrow-left {
-    transform: translateY(100px) translateX(-170px);
+    transform: translateY(150px) translateX(-243px);
 }
 
 #arrow-right {
-    transform: translateY(100px) translateX(18px);
+    transform: translateY(150px) translateX(-170px);
 }

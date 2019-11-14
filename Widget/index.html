@@ -19,7 +19,7 @@
         <div class="wrap">
             <div class="patrocinio">
                 <h5>Promovido por</h5>
-                <img src="https://www.logolynx.com/images/logolynx/43/4307acbd8a3b97720a4f85223e680999.png" alt="">
+                <img src="" alt="" id="logo">
             </div>
             <div class="title">
                 <h5>Cartelera</h5>
@@ -27,19 +27,19 @@
         </div>
         <div id="carrusel">
             <div class="arrow">
-                <i id="arrow-left" class="fas fa-chevron-circle-left"></i>
+                <i id="arrow-left" class="fas fa-chevron-circle-left" onmouseover="cambioColorLeft()" onmouseout="resetColorLeft()"></i>
             </div>
             <div class="slider">
                 <div class="slide">
-                    <img onclick="window.open('https://www.cinemarkca.com')" src="" alt="" id="img">
+                    <img onclick="changeURL()" src="" alt="" id="img">
                 </div>
             </div>
             <div class="arrow">
-                <i id="arrow-right" class="fas fa-chevron-circle-right"></i>
+                <i id="arrow-right" class="fas fa-chevron-circle-right" onmouseover="cambioColorRight()" onmouseout="resetColorRight()"></i>
             </div>
         </div>
         <div>
-            <button class="button" onclick="window.open('https://www.cinemarkca.com')">COMPRAR ENTRADAS</button>
+            <button class="button" onclick="changeURL()">COMPRAR ENTRADAS</button>
         </div>
     </div>
 
