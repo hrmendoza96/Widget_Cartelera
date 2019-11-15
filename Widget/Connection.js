@@ -16,7 +16,7 @@ server.listen(port, () => {
 
 
 const uri = "mongodb://localhost:27017";
-connect();
+//connect();
 setInterval(connect, 1000);
 async function connect() {
     const client = new MongoClient(uri, {
@@ -31,7 +31,22 @@ async function connect() {
         const searchCursor = await peliculas.find();
         const result = await searchCursor.toArray();
         var data = "";
-        result.forEach(r => data += r.url + ",");
+        //result.forEach(r => data += r.url + ",");
+        result.forEach((r) => {
+            //Validar fecha de inicio y vencimiento
+            var fecha_inicio = r.fecha_inicio;
+            var fecha_vencimiento = r.fecha_vencimiento;
+            var fecha_hoy = new Date();
+            var day = fecha_hoy.getDate();
+            var month = fecha_hoy.getMonth() + 1;
+            var year = fecha_hoy.getFullYear();
+            var format = month + "/" + day + "/" + year;
+            //console.log("Format: " + format)
+            if (format >= fecha_inicio && format <= fecha_vencimiento) {
+                data += r.url + ","
+            }
+
+        });
 
         /* Patrocinador */
         const patrocinador = db.collection("patrocinador");

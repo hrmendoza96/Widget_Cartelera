@@ -77,8 +77,13 @@ body {
     margin: auto;
 }
 
+.slide img:hover {
+    cursor: pointer;
+    box-shadow: 0 5px 16px 5px rgba(0, 0, 0, 0.24), 0 17px 50px 5px rgba(0, 0, 0, 0.19);
+}
+
 .button {
-    background-color: #B5121C;
+    background-color: #000;
     border: none;
     color: white;
     /* padding: 8px 35px; */
@@ -106,11 +111,11 @@ body {
 }
 
 #arrow-left:hover {
-    color: #B5121C;
+    color: #333;
 }
 
 #arrow-right:hover {
-    color: #B5121C;
+    color: #333;
 }
 
 #arrow-left {
