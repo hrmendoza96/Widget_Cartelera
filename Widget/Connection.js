@@ -45,6 +45,7 @@ async function connect() {
             if (format >= fecha_inicio && format <= fecha_vencimiento) {
                 data += r.url + ","
             }
+            //Asegurarse de Cambiar Fechas!!!!
 
         });
 
