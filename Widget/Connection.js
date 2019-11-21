@@ -16,8 +16,8 @@ server.listen(port, () => {
 
 
 const uri = "mongodb://localhost:27017";
-//connect();
-setInterval(connect, 1000);
+connect();
+setInterval(connect, 10000);
 async function connect() {
     const client = new MongoClient(uri, {
         useUnifiedTopology: true
@@ -41,8 +41,17 @@ async function connect() {
             var month = fecha_hoy.getMonth() + 1;
             var year = fecha_hoy.getFullYear();
             var format = month + "/" + day + "/" + year;
-            //console.log("Format: " + format)
-            if (format >= fecha_inicio && format <= fecha_vencimiento) {
+            // Fecha Vencimiento (YYYY, MM, DD) 
+            var arregloFechaVencimiento = fecha_vencimiento.split("/");
+            var vencimiento = new Date(arregloFechaVencimiento[2], arregloFechaVencimiento[0], arregloFechaVencimiento[1]);
+            // Fecha Inicio (YYYY, MM, DD)
+            var arregloFechaInicio = fecha_inicio.split("/");
+            var inicio = new Date(arregloFechaInicio[2], arregloFechaInicio[0], arregloFechaInicio[1]);
+            // Fecha Hoy (YYYY, MM, DD)
+            var arregloFechaHoy = format.split("/");
+            var hoy = new Date(arregloFechaHoy[2], arregloFechaHoy[0], arregloFechaHoy[1]);
+            //console.log("Fecha Hoy: " + hoy);
+            if (hoy >= inicio && hoy <= vencimiento) {
                 data += r.url + ","
             }
             //Asegurarse de Cambiar Fechas!!!!
