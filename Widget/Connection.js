@@ -40,16 +40,16 @@ async function connect() {
             var day = fecha_hoy.getDate();
             var month = fecha_hoy.getMonth() + 1;
             var year = fecha_hoy.getFullYear();
-            var format = month + "/" + day + "/" + year;
+            var format = day + "/" + month + "/" + year;
             // Fecha Vencimiento (YYYY, MM, DD) 
             var arregloFechaVencimiento = fecha_vencimiento.split("/");
-            var vencimiento = new Date(arregloFechaVencimiento[2], arregloFechaVencimiento[0], arregloFechaVencimiento[1]);
+            var vencimiento = new Date(arregloFechaVencimiento[2], arregloFechaVencimiento[1], arregloFechaVencimiento[0]);
             // Fecha Inicio (YYYY, MM, DD)
             var arregloFechaInicio = fecha_inicio.split("/");
-            var inicio = new Date(arregloFechaInicio[2], arregloFechaInicio[0], arregloFechaInicio[1]);
+            var inicio = new Date(arregloFechaInicio[2], arregloFechaInicio[1], arregloFechaInicio[0]);
             // Fecha Hoy (YYYY, MM, DD)
             var arregloFechaHoy = format.split("/");
-            var hoy = new Date(arregloFechaHoy[2], arregloFechaHoy[0], arregloFechaHoy[1]);
+            var hoy = new Date(arregloFechaHoy[2], arregloFechaHoy[1], arregloFechaHoy[0]);
             //console.log("Fecha Hoy: " + hoy);
             if (hoy >= inicio && hoy <= vencimiento) {
                 data += r.url + ","
